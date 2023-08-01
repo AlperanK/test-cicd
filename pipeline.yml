@@ -1,26 +1,17 @@
 trigger:
   branches:
     include:
-      - main  # Replace 'main' with the branch you want to trigger the pipeline from
+      - main  # Change this to your desired branch
 
 pool:
-  vmImage: 'ubuntu-latest'  # You can change the VM image as per your requirement
-  name: "tzl-poc"
-  demands:
-    - agent.name -equals tzl-poc-ado-afk-7d47b5ff85-bdf7k
+  vmImage: 'ubuntu-latest'
+  pool: 'test'
 
 steps:
 - task: Docker@2
-  displayName: 'Build Docker Image'
+  displayName: 'Build and push Docker image'
   inputs:
-    containerRegistry: 'harbortaas'  # The name of your Harbor service connection
-    repository: 'tzl-shrd-harbor.taas.vodafone.local/test-2'  # Full URL of your Harbor registry and the repository name
-    command: 'build'
-    Dockerfile: 'Dockerfile'  # Relative path to the Dockerfile (same directory as the YAML)
-
-- task: Docker@2
-  displayName: 'Push Docker Image'
-  inputs:
-    containerRegistry: 'harbortaas'  # The name of your Harbor service connection
-    repository: 'tzl-shrd-harbor.taas.vodafone.local/test-2'  # Full URL of your Harbor registry and the repository name
-    command: 'push'
+    command: 'buildAndPush'
+    containerRegistry: 'dockerafk'  # Use the service connection name you created earlier
+    repository: 'alperanfk/cicd'  # Replace with your Docker Hub username and image repository name
+    Dockerfile: '**/Dockerfile'  # Path to your Dockerfile
