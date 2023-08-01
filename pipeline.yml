@@ -6,6 +6,8 @@ trigger:
 pool:
   vmImage: 'ubuntu-latest'  # You can change the VM image as per your requirement
   name: "tzl-poc"
+  demands:
+    - agent.name -equals tzl-poc-ado-afk-7d47b5ff85-bdf7k
 
 steps:
 - task: Docker@2
