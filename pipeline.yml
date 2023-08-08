@@ -4,14 +4,22 @@ trigger:
       - main  # Change this to your desired branch
 
 pool:
-  vmImage: 'ubuntu-latest'
-  name: 'test'
+  name: 'gzm-shrd'
 
 steps:
-- task: Docker@2
-  displayName: 'Build and push Docker image'
+- task: Kubernetes@1
   inputs:
-    command: 'buildAndPush'
-    containerRegistry: 'dockerafk'  # Use the service connection name you created earlier
-    repository: 'alperanfk/cicd'  # Replace with your Docker Hub username and image repository name
-    Dockerfile: '**/Dockerfile'  # Path to your Dockerfile
+    connectionType: 'Kubernetes Service Connection'
+    kubernetesServiceEndpoint: 'taasshrd'
+    namespace: 'default'
+    command: 'get'
+    arguments: 'pod'
+#    secretType: 'dockerRegistry'
+#    containerRegistryType: 'Azure Container Registry'
+#- task: Docker@2
+#  displayName: 'Build and push Docker image'
+#  inputs:
+#    command: 'buildAndPush'
+#    containerRegistry: 'dockerafk'  # Use the service connection name you created earlier
+#    repository: 'alperanfk/cicd'  # Replace with your Docker Hub username and image repository name
+#    Dockerfile: '**/Dockerfile'  # Path to your Dockerfile
