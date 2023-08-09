@@ -5,6 +5,8 @@ trigger:
 
 pool:
   name: 'tzl-poc'
+  demands:
+  - agent.name -equals tzl-poc-ado-afk-6c74f4d8c9-nt47g
 
 steps:
   
