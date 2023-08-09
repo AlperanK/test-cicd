@@ -7,15 +7,20 @@ pool:
   name: 'tzl-poc'
 
 steps:
+- script: |
+    kubectl version --client
+  displayName: 'Check kubectl version'
+  
 - task: Kubernetes@1
   inputs:
     connectionType: 'Kubernetes Service Connection'
     kubernetesServiceEndpoint: 'taastzlpoc'
     namespace: 'default'
     command: 'get'
-    arguments: 'pod'
+    arguments: 'version --client'
     secretType: 'dockerRegistry'
     containerRegistryType: 'Azure Container Registry'
+    versionSpec: '1.27.3'
 #    secretType: 'dockerRegistry'
 #    containerRegistryType: 'Azure Container Registry'
 #    secretType: 'dockerRegistry'
