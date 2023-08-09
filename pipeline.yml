@@ -7,9 +7,6 @@ pool:
   name: 'tzl-poc'
 
 steps:
-- script: |
-    kubectl version --client
-  displayName: 'Check kubectl version'
   
 - task: Kubernetes@1
   inputs:
