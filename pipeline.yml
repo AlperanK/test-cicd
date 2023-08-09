@@ -14,7 +14,7 @@ steps:
     kubernetesServiceEndpoint: 'taastzlpoc'
     namespace: 'default'
     command: 'get'
-    arguments: 'version --client'
+    arguments: 'pods'
     secretType: 'dockerRegistry'
     containerRegistryType: 'Azure Container Registry'
     versionSpec: '1.27.3'
