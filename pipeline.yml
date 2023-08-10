@@ -11,7 +11,7 @@ steps:
 - task: Kubernetes@1
   inputs:
     connectionType: 'Kubernetes Service Connection'
-    kubernetesServiceEndpoint: 'tzlpoc-svc'
+    kubernetesServiceEndpoint: 'serviceaccounttzlpoc'
     namespace: 'default'
     command: 'get'
     arguments: 'pods'
