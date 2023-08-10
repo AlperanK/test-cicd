@@ -14,7 +14,7 @@ steps:
     kubernetesServiceEndpoint: 'serviceaccounttzlpoc'
     namespace: 'default'
     command: 'get'
-    arguments: 'pods --insecure-skip-tls-verify=true'
+    arguments: 'pods --insecure-skip-tls-verify'
     secretType: 'dockerRegistry'
     containerRegistryType: 'Container Registry'
     versionSpec: '1.27.3'
