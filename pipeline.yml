@@ -17,6 +17,7 @@ steps:
     arguments: 'pods'
     secretType: 'dockerRegistry'
     containerRegistryType: 'Azure Container Registry'
+    outputFormat: 'none'
   
 #    secretType: 'dockerRegistry'
 #    containerRegistryType: 'Azure Container Registry'
