@@ -5,21 +5,19 @@ trigger:
 
 pool:
   name: 'tzl-poc'
-  demands:
-    - agent.name -equals tzl-poc-ado-afk-7db8fd7698-2z274
 
 steps:
   
 - task: Kubernetes@1
   inputs:
     connectionType: 'Kubernetes Service Connection'
-    kubernetesServiceEndpoint: 'taaspoctzl'
+    kubernetesServiceEndpoint: 'tzlpoc-svc'
     namespace: 'default'
     command: 'get'
     arguments: 'pods'
     secretType: 'dockerRegistry'
     containerRegistryType: 'Azure Container Registry'
-    versionSpec: '1.27.3'
+  
 #    secretType: 'dockerRegistry'
 #    containerRegistryType: 'Azure Container Registry'
 #    secretType: 'dockerRegistry'
