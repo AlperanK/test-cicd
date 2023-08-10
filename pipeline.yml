@@ -14,12 +14,10 @@ steps:
     kubernetesServiceEndpoint: 'tzlpoc-svc'
     namespace: 'default'
     command: 'get'
-    useConfigurationFile: true
-    configurationType: 'inline'
-    inline: 'auth can-i list pods'
     arguments: 'pods'
     secretType: 'dockerRegistry'
     containerRegistryType: 'Container Registry'
+    versionSpec: '1.27.3'
     outputFormat: 'none'
   
 #    secretType: 'dockerRegistry'
