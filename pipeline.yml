@@ -11,10 +11,10 @@ steps:
 - task: Kubernetes@1
   inputs:
     connectionType: 'Kubernetes Service Connection'
-    kubernetesServiceEndpoint: 'serviceaccounttzlpoc'
+    kubernetesServiceEndpoint: 'tzlpoc-svc'
     namespace: 'default'
     command: 'get'
-    arguments: 'pods --insecure-skip-tls-verify'
+    arguments: 'pods'
     secretType: 'dockerRegistry'
     containerRegistryType: 'Container Registry'
     versionSpec: '1.27.3'
