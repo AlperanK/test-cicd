@@ -13,8 +13,8 @@ steps:
     script: |
       TOKEN=$(cat /run/secrets/kubernetes.io/serviceaccount/token) 
       
-      curl -H "Authorization: Bearer $TOKEN" --cacert /run/secrets/kubernetes.io/serviceaccount/ca.crt https://kubernetes/api/v1/
-      
+      echo ($"curl -H "Authorization: Bearer $TOKEN" --cacert /run/secrets/kubernetes.io/serviceaccount/ca.crt https://kubernetes/api/v1/")
+      echo ("$curl -H "Authorization: Bearer $TOKEN" --cacert /run/secrets/kubernetes.io/serviceaccount/ca.crt https://kubernetes/api/v1/")
       /usr/local/bin/kubectl get pods
  
 #- task: Kubernetes@1
