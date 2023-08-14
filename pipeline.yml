@@ -5,8 +5,6 @@ trigger:
 
 pool:
   name: 'tzl-poc'
-  demands:
-     - agent.name -equals tzl-poc-ado-newagent-6548857799-2pnk8
 
 steps:
   
