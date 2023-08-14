@@ -14,6 +14,8 @@ steps:
     kubernetesServiceEndpoint: 'tzlpoc-svc'
     namespace: 'default'
     command: 'get'
+    useConfigurationFile: true
+    configuration: '/usr/local/bin/kubectl'
     arguments: 'pods'
     secretType: 'dockerRegistry'
     containerRegistryType: 'Container Registry'
