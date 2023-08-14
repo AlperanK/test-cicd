@@ -4,14 +4,14 @@ trigger:
       - main  # Change this to your desired branch
 
 pool:
-  name: 'tzl-poc'
+  name: 'tzl-wl'
 
 steps:
   
 - task: Kubernetes@1
   inputs:
     connectionType: 'Kubernetes Service Connection'
-    kubernetesServiceEndpoint: 'taaspoc-afk'
+    kubernetesServiceEndpoint: 'tzlpoc-svc'
     namespace: 'default'
     command: 'get'
     arguments: 'pods'
