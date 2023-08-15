@@ -4,14 +4,13 @@ trigger:
       - main  # Change this to your desired branch
 
 pool:
-  vmImage: "ubuntu-latest"
-#  name: 'tzl-wl'
+  name: 'tzl-wl'
 
 steps:
 - task: Kubernetes@1
   inputs:
     connectionType: 'Kubernetes Service Connection'
-    kubernetesServiceEndpoint: 'tzlpoc'
+    kubernetesServiceEndpoint: 'taaspoc-afk'
     command: 'get'
     arguments: 'pods'
     secretType: 'dockerRegistry'
