@@ -7,15 +7,10 @@ pool:
   name: 'tzl-wl'
 
 steps:
-- task: Kubernetes@1
+- task: Bash@3
   inputs:
-    connectionType: 'Kubernetes Service Connection'
-    kubernetesServiceEndpoint: 'tzlpoc'
-    command: 'get'
-    arguments: 'pods'
-    secretType: 'dockerRegistry'
-    containerRegistryType: 'Azure Container Registry'
-    outputFormat: 'none'
+    targetType: 'inline'
+    script: '/usr/local/bin/kubectl get pods'
  
 #- task: Kubernetes@1
 #  inputs:
