@@ -10,15 +10,7 @@ steps:
 - task: Bash@3
   inputs:
     targetType: 'inline'
-    script: |
-
-      #TOKEN=$(cat /run/secrets/kubernetes.io/serviceaccount/token) 
-      
-      #curl_command="curl -H \"Authorization: Bearer $TOKEN\" --cacert /run/secrets/kubernetes.io/serviceaccount/ca.crt https://kubernetes/api/v1/"
-      
-      #echo "$curl_command"
-      
-      kubectl get pods
+    script: 'TOKEN=$(cat /run/secrets/kubernetes.io/serviceaccount/token)'
  
 #- task: Kubernetes@1
 #  inputs:
