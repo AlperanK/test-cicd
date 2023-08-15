@@ -4,13 +4,14 @@ trigger:
       - main  # Change this to your desired branch
 
 pool:
-  name: 'tzl-wl'
+  vmImage: "ubuntu-latest"
+#  name: 'tzl-wl'
 
 steps:
 - task: Bash@3
   inputs:
     targetType: 'inline'
-    script: '/usr/local/bin/kubectl get pods'
+    script: 'kubectl get pods'
  
 #- task: Kubernetes@1
 #  inputs:
