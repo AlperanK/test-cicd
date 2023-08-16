@@ -4,7 +4,7 @@ trigger:
       - main  # Change this to your desired branch
 
 pool:
-  name: 'tzl-poc'
+  name: 'tzl-wl'
   demands:
   - agent.name -equals tzl-poc-ado-newagent-6b6f5896c6-nbhtg
 
@@ -12,7 +12,7 @@ steps:
 - task: Kubernetes@1
   inputs:
     connectionType: 'Kubernetes Service Connection'
-    kubernetesServiceEndpoint: 'tzlpoc-svc'
+    kubernetesServiceEndpoint: 'tzlpoc'
     command: 'get'
     arguments: 'pods'
     secretType: 'dockerRegistry'
