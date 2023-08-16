@@ -5,13 +5,13 @@ trigger:
 
 pool:
   name: 'tzl-wl'
-    
+
 
 steps:
 - task: Kubernetes@1
   inputs:
     connectionType: 'Kubernetes Service Connection'
-    kubernetesServiceEndpoint: 'tzlpoc'
+    kubernetesServiceEndpoint: 'tzlpoc-svc'
     command: 'get'
     arguments: 'pods'
     secretType: 'dockerRegistry'
