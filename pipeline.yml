@@ -12,8 +12,8 @@ steps:
   inputs:
     connectionType: 'Kubernetes Service Connection'
     kubernetesServiceEndpoint: 'tzlpoc'
-    command: 'get'
-    arguments: 'pods'
+    command: 'apply'
+    arguments: '-f kaniko.yml'
     secretType: 'dockerRegistry'
     containerRegistryType: 'Azure Container Registry'
     outputFormat: 'none'
