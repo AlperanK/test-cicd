@@ -9,7 +9,7 @@ spec:
     args:
     - "--dockerfile=Dockerfile"
     - "--context=git://github.com/AlperanK/test-cicd.git"
-    - "--destination=harbor.taas.vodafone.local/taas-test/deneme:v1"
+    - "--destination=alperanfk/azurenew:v5"
     volumeMounts:
     - name: kaniko-secret
       mountPath: /kaniko/.docker
@@ -17,7 +17,7 @@ spec:
   volumes:
   - name: kaniko-secret
     secret:
-      secretName: docker-cred
+      secretName: regcrd
       items:
         - key: .dockerconfigjson
           path: config.json
