@@ -5,8 +5,7 @@ trigger:
 
 pool:
   name: 'tzl-wl'
-  demands:
-  - agent.name -equals tzl-poc-ado-newagent-6b6f5896c6-nbhtg
+    
 
 steps:
 - task: Kubernetes@1
