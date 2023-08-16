@@ -10,7 +10,7 @@ steps:
 - task: Kubernetes@1
   inputs:
     connectionType: 'Kubernetes Service Connection'
-    kubernetesServiceEndpoint: 'taaspoc-afk'
+    kubernetesServiceEndpoint: 'tzlpoc-svc'
     command: 'get'
     arguments: 'pods'
     secretType: 'dockerRegistry'
