@@ -1,22 +1,59 @@
+
 trigger:
-  branches:
-    include:
-      - main  # Change this to your desired branch
-
-pool:
-  name: 'tzl-wl'
-
+-master
 
 steps:
-- task: Kubernetes@1
+ - task: SonarQubePrepare@5
+   inputs:
+     SonarQube: 'sonar-furkan-deneme'
+     scannerMode: 'CLI'
+     configMode: 'manual'
+     cliProjectKey: 'sonar-furkan-deneme'
+
+- task: SonarQubeAnalyze@5
+
+- task: SonarQubePublish@5
   inputs:
-    connectionType: 'Kubernetes Service Connection'
-    kubernetesServiceEndpoint: 'tzlpoc'
-    command: 'apply'
-    arguments: '-f kaniko.yml'
-    secretType: 'dockerRegistry'
-    containerRegistryType: 'Azure Container Registry'
-    outputFormat: 'none'
+    pollingTimeoutSec: '300'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#trigger:
+#  branches:
+#    include:
+#      - main  # Change this to your desired branch
+#
+#pool:
+#  name: 'tzl-wl'
+#
+#
+#steps:
+#- task: Kubernetes@1
+#  inputs:
+#    connectionType: 'Kubernetes Service Connection'
+#    kubernetesServiceEndpoint: 'tzlpoc'
+#    command: 'apply'
+#    arguments: '-f kaniko.yml'
+#    secretType: 'dockerRegistry'
+#    containerRegistryType: 'Azure Container Registry'
+#    outputFormat: 'none'
  
 #- task: Kubernetes@1
 #  inputs:
