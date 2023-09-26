@@ -1,6 +1,8 @@
 
 trigger:
 -master
+pool:
+  name: 'tzl-poc'
 
 steps:
  - task: SonarQubePrepare@5
