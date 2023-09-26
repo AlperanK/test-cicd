@@ -12,6 +12,7 @@ steps:
      scannerMode: 'CLI'
      configMode: 'manual'
      cliProjectKey: 'sonar-furkan-deneme'
+     cliSources: '.'
 
 - task: SonarQubeAnalyze@5
 
