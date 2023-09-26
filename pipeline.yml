@@ -1,6 +1,7 @@
 
 trigger:
--master
+- master
+
 pool:
   name: 'tzl-poc'
 
